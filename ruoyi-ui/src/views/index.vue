@@ -4,37 +4,39 @@
       <el-col :sm="24" :lg="24">
         <blockquote class="text-warning" style="font-size: 14px">
           领取阿里云通用云产品1888优惠券
-          <br />
+          <br>
           <el-link
             href="https://www.aliyun.com/minisite/goods?userCode=brki8iof"
             type="primary"
             target="_blank"
-            >https://www.aliyun.com/minisite/goods?userCode=brki8iof</el-link
-          >
-          <br />
+          >https://www.aliyun.com/minisite/goods?userCode=brki8iof</el-link>
+          <br>
           领取腾讯云通用云产品2860优惠券
-          <br />
+          <br>
           <el-link
             href="https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console"
             type="primary"
             target="_blank"
-            >https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console</el-link
-          >
-          <br />
+          >https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console</el-link>
+          <br>
           阿里云服务器折扣区
-          <el-link href="http://aly.ruoyi.vip" type="primary" target="_blank"
-            >>☛☛点我进入☚☚</el-link
-          >
+          <el-link
+            href="http://aly.ruoyi.vip"
+            type="primary"
+            target="_blank"
+          >>☛☛点我进入☚☚</el-link>
           &nbsp;&nbsp;&nbsp; 腾讯云服务器秒杀区
-          <el-link href="http://txy.ruoyi.vip" type="primary" target="_blank"
-            >>☛☛点我进入☚☚</el-link
-          ><br />
+          <el-link
+            href="http://txy.ruoyi.vip"
+            type="primary"
+            target="_blank"
+          >>☛☛点我进入☚☚</el-link><br>
           <h4 class="text-danger">
             云产品通用红包，可叠加官网常规优惠使用。(仅限新用户)
           </h4>
         </blockquote>
 
-        <hr />
+        <hr>
       </el-col>
     </el-row>
     <el-row :gutter="20">
@@ -56,15 +58,13 @@
             icon="el-icon-cloudy"
             plain
             @click="goTarget('https://gitee.com/y_project/RuoYi-Cloud')"
-            >访问码云</el-button
-          >
+          >访问码云</el-button>
           <el-button
             size="mini"
             icon="el-icon-s-home"
             plain
             @click="goTarget('http://ruoyi.vip')"
-            >访问主页</el-button
-          >
+          >访问主页</el-button>
         </p>
       </el-col>
 
@@ -111,31 +111,27 @@
           </div>
           <div class="body">
             <p>
-              <i class="el-icon-s-promotion"></i> 官网：<el-link
+              <i class="el-icon-s-promotion" /> 官网：<el-link
                 href="http://www.ruoyi.vip"
                 target="_blank"
-                >http://www.ruoyi.vip</el-link
-              >
+              >http://www.ruoyi.vip</el-link>
             </p>
             <p>
-              <i class="el-icon-user-solid"></i> QQ群：<s>满42799195</s>
+              <i class="el-icon-user-solid" /> QQ群：<s>满42799195</s>
               <s>满170157040</s> <s>满130643120</s> <s>满225920371</s>
               <a href="https://jq.qq.com/?_wv=1027&k=Kg9CdVdx" target="_blank">
-                201705537</a
-              >
+                201705537</a>
             </p>
             <p>
-              <i class="el-icon-chat-dot-round"></i> 微信：<a
+              <i class="el-icon-chat-dot-round" /> 微信：<a
                 href="javascript:;"
-                >/ *若依</a
-              >
+              >/ *若依</a>
             </p>
             <p>
-              <i class="el-icon-money"></i> 支付宝：<a
+              <i class="el-icon-money" /> 支付宝：<a
                 href="javascript:;"
                 class="支付宝信息"
-                >/ *若依</a
-              >
+              >/ *若依</a>
             </p>
           </div>
         </el-card>
@@ -592,10 +588,10 @@
               src="https://oscimg.oschina.net/oscnet/up-d6695f82666e5018f715c41cb7ee60d3b73.png"
               alt="donate"
               width="100%"
-            />
-            <span style="display: inline-block; height: 30px; line-height: 30px"
-              >你可以请作者喝杯咖啡表示鼓励</span
             >
+            <span
+              style="display: inline-block; height: 30px; line-height: 30px"
+            >你可以请作者喝杯咖啡表示鼓励</span>
           </div>
         </el-card>
       </el-col>
@@ -605,19 +601,19 @@
 
 <script>
 export default {
-  name: "Index",
+  name: 'Index',
   data() {
     return {
       // 版本号
-      version: "3.2.0",
-    };
+      version: '3.2.0'
+    }
   },
   methods: {
     goTarget(href) {
-      window.open(href, "_blank");
-    },
-  },
-};
+      window.open(href, '_blank')
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

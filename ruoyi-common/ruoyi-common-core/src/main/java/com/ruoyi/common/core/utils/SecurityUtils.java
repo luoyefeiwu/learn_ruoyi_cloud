@@ -1,13 +1,9 @@
-package com.ruoyi.common.security.utils;
+package com.ruoyi.common.core.utils;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.ruoyi.common.core.constant.SecurityConstants;
-import com.ruoyi.common.core.constant.TokenConstants;
-import com.ruoyi.common.core.context.SecurityContextHolder;
-import com.ruoyi.common.core.utils.ServletUtils;
-import com.ruoyi.common.core.utils.StringUtils;
-import com.ruoyi.system.api.model.LoginUser;
+import com.ruoyi.common.core.text.Convert;
 
 /**
  * 权限获取工具类
@@ -17,35 +13,20 @@ import com.ruoyi.system.api.model.LoginUser;
 public class SecurityUtils
 {
     /**
+     * 获取用户
+     */
+    public static String getUsername()
+    {
+        String username = ServletUtils.getRequest().getHeader(SecurityConstants.DETAILS_USERNAME);
+        return ServletUtils.urlDecode(username);
+    }
+
+    /**
      * 获取用户ID
      */
     public static Long getUserId()
     {
-        return SecurityContextHolder.getUserId();
-    }
-
-    /**
-     * 获取用户名称
-     */
-    public static String getUsername()
-    {
-        return SecurityContextHolder.getUserName();
-    }
-
-    /**
-     * 获取用户key
-     */
-    public static String getUserKey()
-    {
-        return SecurityContextHolder.getUserKey();
-    }
-
-    /**
-     * 获取登录用户信息
-     */
-    public static LoginUser getLoginUser()
-    {
-        return SecurityContextHolder.get(SecurityConstants.LOGIN_USER, LoginUser.class);
+        return Convert.toLong(ServletUtils.getRequest().getHeader(SecurityConstants.DETAILS_USER_ID));
     }
 
     /**
@@ -61,20 +42,18 @@ public class SecurityUtils
      */
     public static String getToken(HttpServletRequest request)
     {
-        // 从header获取token标识
-        String token = request.getHeader(TokenConstants.AUTHENTICATION);
+        String token = request.getHeader(SecurityConstants.TOKEN_AUTHENTICATION);
         return replaceTokenPrefix(token);
     }
 
     /**
-     * 裁剪token前缀
+     * 替换token前缀
      */
     public static String replaceTokenPrefix(String token)
     {
-        // 如果前端设置了令牌前缀，则裁剪掉前缀
-        if (StringUtils.isNotEmpty(token) && token.startsWith(TokenConstants.PREFIX))
+        if (StringUtils.isNotEmpty(token) && token.startsWith(SecurityConstants.TOKEN_PREFIX))
         {
-            token = token.replaceFirst(TokenConstants.PREFIX, "");
+            token = token.replace(SecurityConstants.TOKEN_PREFIX, "");
         }
         return token;
     }
