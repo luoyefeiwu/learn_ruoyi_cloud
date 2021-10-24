@@ -70,11 +70,12 @@ export default {
       this.show = false
     },
     change(val) {
-      const path = val.path;
-      if(this.ishttp(val.path)) {
+      console.log(val)
+      const path = val.path
+      if (this.ishttp(val.path)) {
         // http(s):// 路径新窗口打开
-        const pindex = path.indexOf("http");
-        window.open(path.substr(pindex, path.length), "_blank");
+        const pindex = path.indexOf('http')
+        window.open(path.substr(pindex, path.length), '_blank')
       } else {
         this.$router.push(val.path)
       }
